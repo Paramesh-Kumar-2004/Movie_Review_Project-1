@@ -5,13 +5,22 @@ import { Store } from './ContextAPI'
 
 const Card = () => {
 
-    const { data } = useContext(Store)
+    const { movies } = useContext(Store);
 
     return (
-        <div>
-            Cards
-        </div>
+        <>
+            {movies.map((item, index) => (
+                <div key={index} className="movieCard">
+                    <h2>{item["#TITLE"]}</h2>
+                    <p>Year: {item["#YEAR"]}</p>
+                    <p>IMDB ID: {item["#IMDB_ID"]}</p>
+                    <p>Actors: {item["#ACTORS"]}</p>
+                    <p>Rank: {item["#RANK"]}</p>
+                    <img src={item["#IMG_POSTER"]} alt={item["#TITLE"]} width={200} />
+                </div>
+            ))}
+        </>
     )
 }
 
-export default Card
+export default Card;

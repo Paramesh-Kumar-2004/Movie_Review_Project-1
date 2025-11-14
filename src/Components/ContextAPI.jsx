@@ -5,7 +5,7 @@ export const Store = createContext()
 
 const ContextAPI = ({ children }) => {
 
-    const [data, setData] = useState([])
+    const [movies, setMovies] = useState([])
 
     useEffect(() => {
         fetchData()
@@ -14,15 +14,15 @@ const ContextAPI = ({ children }) => {
     async function fetchData() {
         try {
             const res = await axios.get("https://imdb.iamidiotareyoutoo.com/search?q=Spiderman")
-            console.log(res.data.description)
-            setData(res.data)
+            console.log("Movies :", res.data.description)
+            setMovies(res.data.description)
         } catch (error) {
             console.log(error)
         }
     }
 
     return (
-        <Store.Provider value={{ data }}>
+        <Store.Provider value={{ movies }}>
             {children}
         </Store.Provider>
     )
