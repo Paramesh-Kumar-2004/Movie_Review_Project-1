@@ -1,16 +1,19 @@
 import React from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home'
+import ContextAPI from './Components/ContextAPI'
 
 
 const App = () => {
   return (
     <HashRouter>
-      <Routes>
+      <ContextAPI>
+        <Routes>
 
-        <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home />} />
 
-      </Routes>
+        </Routes>
+      </ContextAPI>
     </HashRouter>
   )
 }
