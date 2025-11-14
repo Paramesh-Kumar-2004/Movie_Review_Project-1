@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Store } from '../Components/ContextAPI'
+
+
 
 const Home = () => {
+
+    const { data } = useContext(Store)
+
     return (
-        <div>Home</div>
+        <div>
+            <h1>Home</h1>
+            <p>{data}</p>
+        </div>
     )
 }
 
