@@ -11,14 +11,12 @@ const Card = () => {
         <>
             {movies.map((item, index) => (
                 <div key={index} className="movieCard">
-                    <img
-                        src={item.primaryImage?.url}
-                        alt={item.titleText?.text}
-                        width={200}
-                    />
-
-                    <h2>{item.titleText?.text}</h2>
-                    <p>Year: {item.releaseYear?.year}</p>
+                    <h2>{item["#TITLE"]}</h2>
+                    <p>Year: {item["#YEAR"]}</p>
+                    <p>IMDB ID: {item["#IMDB_ID"]}</p>
+                    <p>Actors: {item["#ACTORS"]}</p>
+                    <p>Rank: {item["#RANK"]}</p>
+                    <img src={item["#IMG_POSTER"]} alt={item["#TITLE"]} width={200} />
                 </div>
             ))}
         </>
