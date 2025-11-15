@@ -12,24 +12,10 @@ const ContextAPI = ({ children }) => {
     const [movieParams, setMovieParams] = useState("")
 
     useEffect(() => {
-        // fetchData()
-        getMovie()
+        // fetchMovie()
     }, [])
 
-    async function fetchData() {
-        try {
-            const res = await axios.get(`https://imdb.iamidiotareyoutoo.com/search?q=${movieParams ? movieParams : 'CaptainAmerica'}`)
-            console.log("Movies :", res.data.description)
-            setMovies(res.data.description)
-            setLoading(false)
-        } catch (error) {
-            setLoadingMessage(error.message)
-            console.log(error)
-        }
-    }
-
-
-    async function getMovie() {
+    async function fetchMovie() {
         const options = {
             method: 'GET',
             url: 'https://imdb236.p.rapidapi.com/api/imdb/search',
