@@ -1,15 +1,22 @@
 import React, { useContext } from 'react'
 import { Store } from './ContextAPI'
+import Loader from './Loader';
 
 
 
 const Card = () => {
 
-    const { movies } = useContext(Store);
+    const { movies, loading, loadingMessage, setLoadingMessage } = useContext(Store);
+
+    if (movies.length === 0) {
+        return (
+            <Loader loadingMessage={loadingMessage} />
+        )
+    }
 
     return (
         <>
-            {movies.map((item, index) => (
+            {movies.length > 0 && movies.map((item, index) => (
                 <div key={index} className="movieCard">
                     <h2>{item["#TITLE"]}</h2>
                     <p>Year: {item["#YEAR"]}</p>
