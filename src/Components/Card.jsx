@@ -14,16 +14,17 @@ const Card = () => {
         )
     }
 
+
     return (
         <>
             {movies.length > 0 && movies.map((item, index) => (
                 <div key={index} className="movieCard">
-                    <h2>{item["#TITLE"]}</h2>
+                    {/* <h2>{item["#TITLE"]}</h2>
                     <p>Year: {item["#YEAR"]}</p>
                     <p>IMDB ID: {item["#IMDB_ID"]}</p>
                     <p>Actors: {item["#ACTORS"]}</p>
-                    <p>Rank: {item["#RANK"]}</p>
-                    <img src={item["#IMG_POSTER"]} alt={item["#TITLE"]} width={200} />
+                    <p>Rank: {item["#RANK"]}</p> */}
+                    <img src={item.primaryImage} alt={item["#TITLE"]} width={200} />
                 </div>
             ))}
         </>
