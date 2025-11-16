@@ -12,20 +12,13 @@ const ContextAPI = ({ children }) => {
     const [movieParams, setMovieParams] = useState("")
 
     useEffect(() => {
-        // fetchMovie()
+        fetchMovie()
     }, [])
 
     async function fetchMovie() {
         const options = {
             method: 'GET',
-            url: 'https://imdb236.p.rapidapi.com/api/imdb/search',
-            params: {
-                type: 'movie',
-                genre: 'Drama',
-                rows: '25',
-                sortOrder: 'ASC',
-                sortField: 'id'
-            },
+            url: 'https://imdb236.p.rapidapi.com/api/imdb/cast/nm0000190/titles',
             headers: {
                 'x-rapidapi-key': '784ddacbc6msh0df9522750dbac2p152a3djsna8781a08619f',
                 'x-rapidapi-host': 'imdb236.p.rapidapi.com'
@@ -34,7 +27,7 @@ const ContextAPI = ({ children }) => {
 
         try {
             const response = await axios.request(options);
-            setMovies(response.data.results)
+            setMovies(response.data)
             console.log(response.data);
         } catch (error) {
             console.error(error);
