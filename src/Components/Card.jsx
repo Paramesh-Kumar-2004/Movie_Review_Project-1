@@ -43,11 +43,11 @@ const Card = () => {
                     movies.map((movie, index) => (
                         <div key={index} className="bg-white shadow-2xl p-2 rounded hover:shadow-blue-500/50 hover:shadow-lg border-2 border-gray-200 flex flex-col justify-between">
                             <img
-                                src={movie.primaryImage ? movie.primaryImage : ""}
+                                src={movie.show?.image?.medium || movie.show?.image?.original}
                                 alt={movie.Title}
                                 className="w-full h-64 object-cover rounded"
                             />
-                            <h3 className="mt-2 font-bold">{movie.primaryTitle}</h3>
+                            <h3 className="mt-2 font-bold">{movie.show.name}</h3>
                             <p className="text-gray-500 text-sm">{movie.startYear}</p>
                             <div className="text-center font-bold text-black-900 text-sm" >
                                 <button className="bg-sky-400 p-1 rounded-md text-black hover:cursor-pointer" onClick={() => HandleMoreDetail(movie)}>More Details</button>

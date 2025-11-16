@@ -16,15 +16,11 @@ const ContextAPI = ({ children }) => {
     }, [])
 
     async function fetchMovie() {
+
         const options = {
             method: 'GET',
-            url: 'https://imdb236.p.rapidapi.com/api/imdb/cast/nm0000190/titles',
-            headers: {
-                'x-rapidapi-key': '784ddacbc6msh0df9522750dbac2p152a3djsna8781a08619f',
-                'x-rapidapi-host': 'imdb236.p.rapidapi.com'
-            }
+            url: 'https://api.themoviedb.org/3/discover/movie?api_key=YOUR_KEY&query=spider&with_genres=28&primary_release_year=2022&page=2',
         };
-
         try {
             const response = await axios.request(options);
             setMovies(response.data)
