@@ -4,10 +4,9 @@ import React from "react";
 
 function Loader({ loadingMessage }) {
     return (
-        <section className="py-20 dark:bg-slate-900">
+        <section>
             <div className="flex flex-col items-center justify-center gap-4">
 
-                {/* Spinner */}
                 <div className="flex items-center justify-center">
                     <svg
                         width="48"
@@ -36,9 +35,8 @@ function Loader({ loadingMessage }) {
                     </svg>
                 </div>
 
-                {/* Loading Text */}
                 {loadingMessage && (
-                    <p className="mt-3 text-lg font-medium text-gray-700 dark:text-gray-200">
+                    <p className="text-lg font-bold text-blue-700">
                         {loadingMessage}
                     </p>
                 )}

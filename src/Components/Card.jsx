@@ -10,7 +10,9 @@ const Card = () => {
 
     if (movies.length === 0) {
         return (
-            <Loader loadingMessage={loadingMessage} />
+            <div className='h-screen w-full flex justify-center items-center'>
+                <Loader loadingMessage={loadingMessage} />
+            </div>
         )
     }
 
