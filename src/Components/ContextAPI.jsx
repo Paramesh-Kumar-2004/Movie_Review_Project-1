@@ -10,7 +10,7 @@ const ContextAPI = ({ children }) => {
     const [loadingMessage, setLoadingMessage] = useState("Loading...")
     const [movies, setMovies] = useState([])
 
-    const [page, setPage] = useState(3)
+    const [page, setPage] = useState(1)
     const [title, setTitle] = useState("")
     const [type, setType] = useState("movie")
     const [year, setYear] = useState()
