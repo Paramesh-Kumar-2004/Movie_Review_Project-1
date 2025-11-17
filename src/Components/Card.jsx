@@ -12,7 +12,7 @@ const Card = () => {
 
     // const [] = useState(0)
 
-    if (movies.length === 0) {
+    if (loading) {
         return (
             <div className='h-screen w-full flex justify-center items-center'>
                 <Loader loadingMessage={loadingMessage} />
@@ -20,29 +20,11 @@ const Card = () => {
         )
     }
 
-    async function getImage() {
-        const options = {
-            method: 'GET',
-            url: 'https://imdb236.p.rapidapi.com/api/imdb/tt0816692',
-            headers: {
-                'x-rapidapi-key': '784ddacbc6msh0df9522750dbac2p152a3djsna8781a08619f',
-                'x-rapidapi-host': 'imdb236.p.rapidapi.com'
-            }
-        };
-
-        try {
-            const response = await axios.request(options);
-            console.log(response.data);
-        } catch (error) {
-            console.error(error);
-        }
-    }
-
 
     return (
         <>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {movies.length > 0 ? (
+                {movies ? (
                     movies.map((movie, index) => (
                         <div key={index} className="bg-white shadow-2xl p-2 rounded hover:shadow-blue-500/50 hover:shadow-lg border-2 border-gray-200 flex flex-col justify-between">
                             <img

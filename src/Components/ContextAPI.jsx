@@ -20,17 +20,19 @@ const ContextAPI = ({ children }) => {
     }, [page, title])
 
     async function fetchMovie() {
-
         const options = {
             method: 'GET',
             url: `http://www.omdbapi.com/?apikey=747591dd&s=${title ? title : "Avengers"}&page=${page}&type=${type}&y=${year}`,
         };
         try {
+            setLoading(true)
             const response = await axios.request(options);
             setMovies(response.data.Search)
             console.log("Response :", response.data);
         } catch (error) {
             console.error(error);
+        } finally {
+            setLoading(false)
         }
     }
 
