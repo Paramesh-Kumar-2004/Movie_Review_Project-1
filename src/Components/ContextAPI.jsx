@@ -17,7 +17,7 @@ const ContextAPI = ({ children }) => {
 
     useEffect(() => {
         fetchMovie()
-    }, [page])
+    }, [page, title])
 
     async function fetchMovie() {
 
@@ -28,7 +28,7 @@ const ContextAPI = ({ children }) => {
         try {
             const response = await axios.request(options);
             setMovies(response.data.Search)
-            console.log(response.data);
+            console.log("Response :", response.data);
         } catch (error) {
             console.error(error);
         }
@@ -38,7 +38,8 @@ const ContextAPI = ({ children }) => {
         <Store.Provider value={{
             movies, setMovies,
             loading, setLoading,
-            loadingMessage, setLoadingMessage
+            loadingMessage, setLoadingMessage,
+            title, setTitle,
         }}>
             {children}
         </Store.Provider>
