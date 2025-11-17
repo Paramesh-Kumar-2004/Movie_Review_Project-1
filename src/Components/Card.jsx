@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Store } from './ContextAPI'
 import Loader from './Loader';
 import axios from 'axios';
@@ -8,6 +8,8 @@ import axios from 'axios';
 const Card = () => {
 
     const { movies, loading, loadingMessage, setLoadingMessage } = useContext(Store);
+
+    const [] = useState(0)
 
     if (movies.length === 0) {
         return (
