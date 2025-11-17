@@ -23,10 +23,11 @@ const Card = () => {
 
     return (
         <>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4"> */}
+            <div className="flex flex-wrap justify-around gap-4">
                 {movies ? (
                     movies.map((movie, index) => (
-                        <div key={index} className="bg-white shadow-2xl p-2 rounded hover:shadow-blue-500/50 hover:shadow-lg border-2 border-gray-200 flex flex-col justify-between">
+                        <div key={index} className="bg-sky-50 shadow-2xl p-2 rounded hover:shadow-blue-500/50 duration-300 hover:-translate-y-3 hover:shadow-lg border-2 hover:bg-green-100 border-gray-400 flex flex-col justify-between">
                             <img
                                 src={movie.Poster}
                                 alt={movie.Title}
