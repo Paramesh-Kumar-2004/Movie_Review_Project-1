@@ -12,8 +12,14 @@ const SearchBar = () => {
         setTitle(e.target.value)
     }
 
+    function HandleFilter(e) {
+        console.log("Filter :", e.target.value)
+    }
+
     return (
         <div>
+
+            {/* Search Bar */}
             <div>
                 <div>
                     <label htmlFor="search">Search : </label>
@@ -25,7 +31,16 @@ const SearchBar = () => {
                     />
                 </div>
             </div>
-            <div>Filter</div>
+
+            {/* Filter */}
+            <div>
+                Filter :
+                <select onChange={(e) => HandleFilter(e)}>
+                    <option value="movie">Movies</option>
+                    <option value="series">Series</option>
+                </select>
+            </div>
+
         </div>
     )
 }
