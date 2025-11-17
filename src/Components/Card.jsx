@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { Store } from './ContextAPI'
 import Loader from './Loader';
 import axios from 'axios';
+import Rating from './Rating';
 
 
 
@@ -9,7 +10,7 @@ const Card = () => {
 
     const { movies, loading, loadingMessage, setLoadingMessage } = useContext(Store);
 
-    const [] = useState(0)
+    // const [] = useState(0)
 
     if (movies.length === 0) {
         return (
@@ -51,6 +52,7 @@ const Card = () => {
                             />
                             <h3 className="mt-2 font-bold">{movie.Title}</h3>
                             <p className="text-gray-500 text-sm">{movie.Year}</p>
+                            <Rating />
                             <div className="text-center font-bold text-black-900 text-sm" >
                                 <button className="bg-sky-400 p-1 rounded-md text-black hover:cursor-pointer" onClick={() => HandleMoreDetail(movie)}>More Details</button>
                             </div>
