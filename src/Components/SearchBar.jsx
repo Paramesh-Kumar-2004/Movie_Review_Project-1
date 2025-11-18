@@ -27,9 +27,9 @@ const SearchBar = () => {
                     <input
                         value={title}
                         type="text"
-                        placeholder='Search Movies Here...'
+                        placeholder='Search Movies Here... Enter Minimum 3 Letters'
                         onChange={(e) => HandleOnChange(e)}
-                        className='outline-none border-2 border-sky-600 rounded-md p-1'
+                        className='outline-none border-2 border-sky-600 rounded-md p-1 w-[60%]'
                     />
                 </div>
             </div>
@@ -40,7 +40,7 @@ const SearchBar = () => {
                 <select onChange={(e) => HandleFilter(e)} className='items-center'>
                     <option value="movie">Movies</option>
                     <option value="series">Series</option>
-                </select>   
+                </select>
             </div>
 
         </div >
