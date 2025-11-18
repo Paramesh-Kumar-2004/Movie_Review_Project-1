@@ -28,6 +28,7 @@ const ContextAPI = ({ children }) => {
             setLoading(true)
             const response = await axios.request(options);
             setMovies(response.data.Search || [])
+            // console.log(response.data.Search)
         } catch (error) {
             console.error(error);
         } finally {
