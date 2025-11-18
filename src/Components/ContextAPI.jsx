@@ -9,6 +9,7 @@ const ContextAPI = ({ children }) => {
     const [loading, setLoading] = useState(true)
     const [loadingMessage, setLoadingMessage] = useState("Loading...")
     const [movies, setMovies] = useState([])
+    const [movieData, setMovieData] = useState([])
 
     const [page, setPage] = useState(1)
     const [title, setTitle] = useState("")
@@ -39,6 +40,7 @@ const ContextAPI = ({ children }) => {
     return (
         <Store.Provider value={{
             movies, setMovies,
+            movieData, setMovieData,
             loading, setLoading,
             loadingMessage, setLoadingMessage,
             page, setPage,

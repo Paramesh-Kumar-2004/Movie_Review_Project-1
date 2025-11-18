@@ -3,14 +3,19 @@ import { Store } from './ContextAPI'
 import Loader from './Loader';
 import axios from 'axios';
 import Rating from './Rating';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const Card = () => {
 
-    const { movies, loading, loadingMessage, setLoadingMessage } = useContext(Store);
+    const navigate = useNavigate()
+    const { movies, loading, loadingMessage} = useContext(Store);
 
-    // const [] = useState(0)
+
+    function HandleMoreDetail(movie) {
+        navigate(`/movie/${movie.imdbID}`)
+    }
 
     if (loading) {
         return (
@@ -19,7 +24,6 @@ const Card = () => {
             </div>
         )
     }
-
 
     return (
         <>
