@@ -1,10 +1,12 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const MovieData = () => {
 
     const { id } = useParams()
+    const navigate = useNavigate()
+
     const [movieData, setMovieData] = useState([])
 
     useEffect(() => {
@@ -41,23 +43,40 @@ const MovieData = () => {
                             />
                         </div>
                         <div className='flex flex-col justify-between flex-wrap'>
-                            <h3 className="mt-2 font-bold">Movie : {movieData.Title}</h3>
-                            <p className="text-gray-500 text-sm">Actors : {movieData.Actors}</p>
-                            <p className="text-gray-500 text-sm">Director : {movieData.Director}</p>
-                            <p className="text-gray-500 text-sm">Writer : {movieData.Writer}</p>
-                            <p className="text-gray-500 text-sm">Year : {movieData.Year}</p>
-                            <p className="text-gray-500 text-sm">BoxOffice : {movieData.BoxOffice}</p>
-                            <p className="text-gray-500 text-sm">Type : {movieData.Type}</p>
+
+                            <h3 className="mt-2 font-bold text-blue-600"><span className='text-black font-bold'>Movie : </span>{movieData.Title}</h3>
+
+                            <p className="text-sm font-bold text-blue-500"><span className='text-black font-bold'>Actors : </span>{movieData.Actors}</p>
+
+                            <p className="font-bold text-blue-500 text-sm"><span className='text-black font-bold'>Director : </span>{movieData.Director}</p>
+
+                            <p className="text-blue-500 text-sm font-bold"><span className='text-black font-bold'>Writer : </span>{movieData.Writer}</p>
+
+                            <p className="text-blue-500 text-sm font-bold"><span className='text-black font-bold'>Released Year : </span>{movieData.Released}</p>
+
+                            <p className="text-blue-500 text-sm font-bold"><span className='text-black font-bold'>Duration : </span>{movieData.Runtime}</p>
+
+                            <p className="text-blue-500 text-sm font-bold"><span className='text-black font-bold'>Box Office : </span>{movieData.BoxOffice}</p>
+
+                            <p className="text-blue-500 text-sm font-bold"><span className='text-black font-semibold'>Type : </span> {movieData.Type}</p>
+
+                            <div className='text-center'>
+                                <button
+                                    className='bg-blue-600 py-2 px-5 rounded-sm text-white cursor-pointer hover:scale-110 duration-150'
+                                    onClick={() => navigate("/")}
+                                >Back</button>
+                            </div>
                         </div>
                     </div>
                 ) : (
                     <div>
-                        <p className="text-center text-gray-500 mt-10 text-xl">
+                        <p className="text-center text-blue-500 mt-10 font-bold text-xl">
                             No Data Found
                         </p>
                     </div>
                 )}
             </div>
+
         </>
     )
 }
