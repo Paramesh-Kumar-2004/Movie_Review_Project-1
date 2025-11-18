@@ -1,22 +1,22 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { Store } from '../Components/ContextAPI'
+import Loader from '../Components/Loader'
+
+
 
 const MovieData = () => {
 
     const { id } = useParams()
     const navigate = useNavigate()
 
+    const { loading, setLoading, loadingMessage } = useContext(Store)
     const [movieData, setMovieData] = useState([])
 
     useEffect(() => {
         GetMovie()
     }, [id])
-
-    useEffect(() => {
-        console.log(movieData);
-    }, [movieData]);
-
 
 
     async function GetMovie() {
@@ -27,7 +27,17 @@ const MovieData = () => {
             // console.log(movieData)
         } catch (error) {
             console.log(error)
+        } finally {
+            setLoading(false)
         }
+    }
+
+    if (loading) {
+        return (
+            <div className='h-screen w-full flex justify-center items-center'>
+                <Loader loadingMessage={loadingMessage} />
+            </div>
+        )
     }
 
     return (
@@ -58,7 +68,7 @@ const MovieData = () => {
 
                             <p className="text-blue-500 text-sm font-bold"><span className='text-black font-bold'>Box Office : </span>{movieData.BoxOffice}</p>
 
-                            <p className="text-blue-500 text-sm font-bold"><span className='text-black font-semibold'>Type : </span> {movieData.Type}</p>
+                            <p className="text-blue-500 text-sm font-bold"><span className='text-black font-semibold'>Type : </span> {(movieData.Type)}</p>
 
                             <div className='text-center'>
                                 <button
@@ -70,9 +80,9 @@ const MovieData = () => {
                     </div>
                 ) : (
                     <div>
-                        <p className="text-center text-blue-500 mt-10 font-bold text-xl">
-                            No Data Found
-                        </p>
+                        <div className='h-screen w-full flex justify-center items-center'>
+                            <Loader loadingMessage={loadingMessage} />
+                        </div>
                     </div>
                 )}
             </div>
