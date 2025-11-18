@@ -32,12 +32,12 @@ const MovieData = () => {
         <>
             <div className='h-screen w-full flex flex-wrap justify-center items-center bg-gray-200'>
                 {Object.keys(movieData).length > 0 ? (
-                    <div className="min-w-2xs w-[60%] h-[70%] bg-sky-50 shadow-2xl p-2 rounded hover:shadow-blue-500/50 duration-300 hover:-translate-y-3 hover:shadow-lg border-2 hover:bg-green-100 border-gray-400 flex gap-6">
+                    <div className="min-w-2xs w-[60%] min-h-[70%] bg-sky-50 shadow-2xl p-2 rounded hover:shadow-blue-500/50 duration-300 hover:-translate-y-3 hover:shadow-lg border-2 hover:bg-green-100 border-gray-400 flex flex-wrap justify-center md:flex-nowrap gap-6 ">
                         <div>
                             <img
                                 src={movieData.Poster}
                                 alt={movieData.Title}
-                                className="w-full h-full object-cover rounded"
+                                className="w-full h-full min-w-40 min-h-80 object-cover rounded"
                             />
                         </div>
                         <div className='flex flex-col justify-between flex-wrap'>
