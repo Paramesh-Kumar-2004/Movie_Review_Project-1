@@ -8,7 +8,6 @@ const SearchBar = () => {
     const { title, setTitle, setType } = useContext(Store)
 
     function HandleOnChange(e) {
-        console.log(e.target.value)
         setTitle(e.target.value)
     }
 

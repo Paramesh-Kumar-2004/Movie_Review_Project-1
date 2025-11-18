@@ -35,6 +35,7 @@ const Card = () => {
                             />
                             <h3 className="mt-2 font-bold">{movie.Title}</h3>
                             <p className="text-gray-500 text-sm">{movie.Year}</p>
+                            <p className="text-gray-500 text-sm">{movie.Type}</p>
                             <Rating />
                             <div className="text-center font-bold text-black-900 text-sm" >
                                 <button className="bg-sky-400 p-1 rounded-md text-black hover:cursor-pointer" onClick={() => HandleMoreDetail(movie)}>More Details</button>

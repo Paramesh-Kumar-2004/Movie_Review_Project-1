@@ -20,17 +20,15 @@ const ContextAPI = ({ children }) => {
     }, [page, title, type])
 
     async function fetchMovie() {
-        const url = `http://www.omdbapi.com/?apikey=747591dd&s=${title ? title : "Avengers"}& page=${page}& type=${type}& y=${year} `
-        const url2 = `http://www.omdbapi.com/?apikey=747591dd&s=${title ? title : "Avengers"}& page=${page + 1}& type=${type}& y=${year} `
-
+        const options = {
+            method: 'GET',
+            url: `http://www.omdbapi.com/?apikey=747591dd&s=${title ? title : "Avengers"}&page=${page}&type=${type}&y=${year}`,
+        };
         try {
             setLoading(true)
-            const response = await axios.get(url);
-            const response2 = await axios.get(url2);
-            // const MoviesData = [...response.data.Search, ...response2.data.Search]
-            // console.log(MoviesData)
-            // setMovies(MoviesData || [])
+            const response = await axios.request(options);
             setMovies(response.data.Search || [])
+            console.log("Response :", response.data);
         } catch (error) {
             console.error(error);
         } finally {
