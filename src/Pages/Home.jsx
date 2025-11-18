@@ -6,8 +6,12 @@ import SearchBar from '../Components/SearchBar.jsx'
 const Home = () => {
     return (
         <div>
-            <SearchBar />
-            <Card />
+            <div className='my-4'>
+                <SearchBar />
+            </div>
+            <div>
+                <Card />
+            </div>
         </div>
     )
 }

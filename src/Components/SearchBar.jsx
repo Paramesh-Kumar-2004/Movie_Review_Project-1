@@ -5,7 +5,7 @@ import { Store } from './ContextAPI'
 
 const SearchBar = () => {
 
-    const { title, setTitle } = useContext(Store)
+    const { title, setTitle, setType } = useContext(Store)
 
     function HandleOnChange(e) {
         console.log(e.target.value)
@@ -13,35 +13,37 @@ const SearchBar = () => {
     }
 
     function HandleFilter(e) {
-        console.log("Filter :", e.target.value)
+        const newType = e.target.value
+        setType(newType)
     }
 
     return (
-        <div>
+        <div className='flex flex-col justify-around items-center gap-2'>
 
             {/* Search Bar */}
-            <div>
-                <div>
-                    <label htmlFor="search">Search : </label>
+            <div className='w-1/2'>
+                <div className='text-center'>
+                    <label htmlFor="search" className='font-bold'>Search : </label>
                     <input
                         value={title}
                         type="text"
                         placeholder='Search Movies Here...'
                         onChange={(e) => HandleOnChange(e)}
+                        className='outline-none border-2 border-sky-600 rounded-md p-1'
                     />
                 </div>
             </div>
 
             {/* Filter */}
-            <div>
-                Filter :
-                <select onChange={(e) => HandleFilter(e)}>
+            <div className='text-center w-1/2'>
+                <span className='font-bold'>Filter :</span>
+                <select onChange={(e) => HandleFilter(e)} className='items-center'>
                     <option value="movie">Movies</option>
                     <option value="series">Series</option>
-                </select>
+                </select>   
             </div>
 
-        </div>
+        </div >
     )
 }
 

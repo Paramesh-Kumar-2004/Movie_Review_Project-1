@@ -17,7 +17,7 @@ const ContextAPI = ({ children }) => {
 
     useEffect(() => {
         fetchMovie()
-    }, [page, title])
+    }, [page, title, type])
 
     async function fetchMovie() {
         const options = {
@@ -41,7 +41,10 @@ const ContextAPI = ({ children }) => {
             movies, setMovies,
             loading, setLoading,
             loadingMessage, setLoadingMessage,
+            page, setPage,
             title, setTitle,
+            type, setType,
+            year, setYear,
         }}>
             {children}
         </Store.Provider>
