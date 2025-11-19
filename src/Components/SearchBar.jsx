@@ -5,7 +5,7 @@ import { Store } from './ContextAPI'
 
 const SearchBar = () => {
 
-    const { title, setTitle, setType } = useContext(Store)
+    const { title, setTitle, type, setType } = useContext(Store)
 
     function HandleOnChange(e) {
         setTitle(e.target.value)
@@ -36,7 +36,7 @@ const SearchBar = () => {
             {/* Filter */}
             <div className='text-center w-1/2'>
                 <span className='font-bold'>Filter :</span>
-                <select onChange={(e) => HandleFilter(e)} className='items-center'>
+                <select value={type} onChange={(e) => HandleFilter(e)} className='items-center'>
                     <option value="movie">Movies</option>
                     <option value="series">Series</option>
                 </select>
