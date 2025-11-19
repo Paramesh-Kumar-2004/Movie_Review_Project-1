@@ -31,7 +31,7 @@ const Card = () => {
             <div className="flex flex-wrap justify-around gap-4">
                 {movies.length > 0 ? (
                     movies.map((movie, index) => (
-                        <div key={index} className="w-2xs bg-transparent shadow-2xl p-2 rounded hover:shadow-blue-500/50 duration-300 hover:scale-105 hover:shadow-lg border-2 hover:bg-sky-600 border-sky-400 flex flex-col justify-between">
+                        <div key={index} className="w-64 bg-transparent shadow-2xl p-2 rounded hover:shadow-blue-500/50 duration-300 hover:scale-105 hover:shadow-lg border-2 hover:bg-sky-600 border-sky-400 flex flex-col justify-between">
                             <img
                                 src={movie.Poster}
                                 alt={movie.Title}
