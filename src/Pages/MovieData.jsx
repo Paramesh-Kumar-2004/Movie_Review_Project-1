@@ -68,6 +68,8 @@ const MovieData = () => {
 
                             <p className="text-blue-500 text-sm font-bold"><span className='text-black font-bold'>Box Office : </span>{movieData.BoxOffice}</p>
 
+                            <p className="text-blue-500 text-sm font-bold"><span className='text-black font-bold'>IMDB Rating : </span>{movieData.imdbRating}</p>
+
                             <p className="text-blue-500 text-sm font-bold"><span className='text-black font-semibold'>Type : </span> {(movieData.Type)}</p>
 
                             <div className='text-center'>

@@ -31,17 +31,17 @@ const Card = () => {
             <div className="flex flex-wrap justify-around gap-4">
                 {movies.length > 0 ? (
                     movies.map((movie, index) => (
-                        <div key={index} className="w-2xs bg-sky-50 shadow-2xl p-2 rounded hover:shadow-blue-500/50 duration-300 hover:-translate-y-3 hover:shadow-lg border-2 hover:bg-green-100 border-gray-400 flex flex-col justify-between">
+                        <div key={index} className="w-2xs bg-transparent shadow-2xl p-2 rounded hover:shadow-blue-500/50 duration-300 hover:scale-105 hover:shadow-lg border-2 hover:bg-sky-600 border-sky-400 flex flex-col justify-between">
                             <img
                                 src={movie.Poster}
                                 alt={movie.Title}
                                 className="w-full h-64 object-cover rounded"
                             />
                             <h3 className="mt-2 font-bold">{movie.Title}</h3>
-                            <p className="text-gray-500 text-sm">{movie.Year}</p>
+                            <p className="text-gray-50 font-extrabold text-sm">{movie.Year}</p>
                             <Rating />
                             <div className="text-center font-bold text-black-900 text-sm" >
-                                <button className="bg-sky-400 p-1 rounded-md text-black hover:cursor-pointer" onClick={() => HandleMoreDetail(movie)}>More Details</button>
+                                <button className="bg-blue-800 py-1 px-3 rounded-md text-white hover:cursor-pointer hover:scale-125 duration-500 border-2 border-sky-400" onClick={() => HandleMoreDetail(movie)}>More Details</button>
                             </div>
                         </div>
                     ))
