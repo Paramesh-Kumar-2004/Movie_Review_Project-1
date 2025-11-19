@@ -15,13 +15,13 @@ const Rating = () => {
 
     return (
         <div>
-            <input
-                type="text"
-                rating={rating}
-                placeholder='Enter The Number 1 to 5'
-                onChange={(e) => { HandleRatingUpdate(e) }}
-                className='border-2 border-sky-500 p-0.5'
-            />
+            <div className='bg-gray-400 flex justify-around'>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+            </div>
             Rating : {rating}
         </div>
     )

@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 const Card = () => {
 
     const navigate = useNavigate()
-    const { movies, loading, loadingMessage} = useContext(Store);
+    const { movies, loading, loadingMessage } = useContext(Store);
 
 
     function HandleMoreDetail(movie) {
@@ -31,7 +31,7 @@ const Card = () => {
             <div className="flex flex-wrap justify-around gap-4">
                 {movies.length > 0 ? (
                     movies.map((movie, index) => (
-                        <div key={index} className="bg-sky-50 shadow-2xl p-2 rounded hover:shadow-blue-500/50 duration-300 hover:-translate-y-3 hover:shadow-lg border-2 hover:bg-green-100 border-gray-400 flex flex-col justify-between">
+                        <div key={index} className="w-2xs bg-sky-50 shadow-2xl p-2 rounded hover:shadow-blue-500/50 duration-300 hover:-translate-y-3 hover:shadow-lg border-2 hover:bg-green-100 border-gray-400 flex flex-col justify-between">
                             <img
                                 src={movie.Poster}
                                 alt={movie.Title}
@@ -39,7 +39,6 @@ const Card = () => {
                             />
                             <h3 className="mt-2 font-bold">{movie.Title}</h3>
                             <p className="text-gray-500 text-sm">{movie.Year}</p>
-                            <p className="text-gray-500 text-sm">{movie.Type}</p>
                             <Rating />
                             <div className="text-center font-bold text-black-900 text-sm" >
                                 <button className="bg-sky-400 p-1 rounded-md text-black hover:cursor-pointer" onClick={() => HandleMoreDetail(movie)}>More Details</button>
