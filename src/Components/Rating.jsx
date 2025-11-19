@@ -16,11 +16,11 @@ const Rating = () => {
     return (
         <div>
             <div className='bg-gray-400 flex justify-around'>
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>
-                <span>5</span>
+                <option value="1" className={`${rating === value ? 'red' : 'blue'}`}>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </div>
             Rating : {rating}
         </div>
