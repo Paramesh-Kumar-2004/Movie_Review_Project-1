@@ -36,7 +36,7 @@ function Loader({ loadingMessage }) {
                 </div>
 
                 {loadingMessage && (
-                    <p className="text-lg font-bold text-blue-700">
+                    <p className="text-lg font-bold text-white">
                         {loadingMessage}
                     </p>
                 )}
