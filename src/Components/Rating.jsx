@@ -5,64 +5,39 @@ const Rating = () => {
     const [rating, setRating] = useState(Math.round(Math.random(5) * 5))
 
     const HandleRatingUpdate = (e) => {
-        if (e.target.rating <= 5) {
-            return setRating(e.target.rating)
-        }
-        else {
-            alert("Enter 1 to 5")
-        }
+        setRating(e.target.value)
     }
 
     return (
         <div>
-            <div className='bg-gray-400 flex justify-around'>
-                <option value="1" className={`${rating === value ? 'red' : 'blue'}`}>1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+            <div className='flex justify-between mt-1 mb-2 '>
+                <option value="1"
+                    onClick={(e) => HandleRatingUpdate(e)}
+                    className={`${rating >= 1 ? 'text-amber-500' : 'text-gray-700'} text-xl font-extrabold cursor-pointer`}
+                >&#9733;</option>
+
+                <option value="2"
+                    onClick={(e) => HandleRatingUpdate(e)}
+                    className={`${rating >= 2 ? 'text-amber-500' : 'text-gray-700'} text-xl font-extrabold cursor-pointer`}
+                >&#9733;</option>
+
+                <option value="3"
+                    onClick={(e) => HandleRatingUpdate(e)}
+                    className={`${rating >= 3 ? 'text-amber-500' : 'text-gray-700'} text-xl font-extrabold cursor-pointer`}
+                >&#9733;</option>
+
+                <option value="4"
+                    onClick={(e) => HandleRatingUpdate(e)}
+                    className={`${rating >= 4 ? 'text-amber-500' : 'text-gray-700'} text-xl font-extrabold cursor-pointer`}
+                >&#9733;</option>
+
+                <option value="5"
+                    onClick={(e) => HandleRatingUpdate(e)}
+                    className={`${rating >= 5 ? 'text-amber-500' : 'text-gray-700'} text-xl font-extrabold cursor-pointer`}
+                >&#9733;</option>
             </div>
-            Rating : {rating}
         </div>
     )
 }
 
 export default Rating
-
-
-// import * as React from 'react';
-// import Box from '@mui/material/Box';
-// import Rating from '@mui/material/Rating';
-// import Typography from '@mui/material/Typography';
-
-// export default function Rating() {
-
-//     const [rating, setRating] = useState(Math.round(Math.random(5) * 5))
-
-//     return (
-//         <Box sx={{ '& > legend': { mt: 2 } }}>
-//             <Typography component="legend">Controlled</Typography>
-//             <Rating
-//                 name="simple-controlled"
-//                 rating={rating}
-//                 onChange={(event, newValue) => {
-//                     setRating(newValue);
-//                 }}
-//             />
-//             <Typography component="legend">Uncontrolled</Typography>
-//             <Rating
-//                 name="simple-uncontrolled"
-//                 onChange={(event, newValue) => {
-//                     console.log(newValue);
-//                 }}
-//                 defaultValue={2}
-//             />
-//             <Typography component="legend">Read only</Typography>
-//             <Rating name="read-only" rating={rating} readOnly />
-//             <Typography component="legend">Disabled</Typography>
-//             <Rating name="disabled" rating={rating} disabled />
-//             <Typography component="legend">No rating given</Typography>
-//             <Rating name="no-rating" rating={null} />
-//         </Box>
-//     );
-// }
