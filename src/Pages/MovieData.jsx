@@ -42,9 +42,9 @@ const MovieData = () => {
 
     return (
         <>
-            <div className='h-screen w-full flex flex-wrap justify-center items-center bg-gray-200'>
+            <div className='h-screen w-full flex flex-wrap justify-center items-center bg-sky-900'>
                 {Object.keys(movieData).length > 0 ? (
-                    <div className="min-w-2xs w-[60%] min-h-[70%] bg-sky-50 shadow-2xl p-2 rounded hover:shadow-blue-500/50 duration-300 hover:-translate-y-3 hover:shadow-lg border-2 hover:bg-green-100 border-gray-400 flex flex-wrap justify-center md:flex-nowrap gap-6 ">
+                    <div className="min-w-2xs w-[60%] min-h-[70%] bg-[rgba(0,0,0,0.2)] shadow-[inset_0_0px_126px_0px_rgba(0,0,255,0.3)] p-2 rounded hover:shadow-blue-500/50 duration-300 hover:scale-105 border-2 hover:bg-sky-900 border-sky-400 flex flex-wrap justify-center md:flex-nowrap gap-6 text-white ">
                         <div>
                             <img
                                 src={movieData.Poster}
@@ -54,23 +54,23 @@ const MovieData = () => {
                         </div>
                         <div className='flex flex-col justify-between flex-wrap'>
 
-                            <h3 className="mt-2 font-bold text-blue-600"><span className='text-black font-bold'>Movie : </span>{movieData.Title}</h3>
+                            <h3 className="mt-2 font-bold "><span className='text-black font-bold'>Movie : </span>{movieData.Title}</h3>
 
-                            <p className="text-sm font-bold text-blue-500"><span className='text-black font-bold'>Actors : </span>{movieData.Actors}</p>
+                            <p className="text-sm font-bold"><span className='text-black font-bold'>Actors : </span>{movieData.Actors}</p>
 
-                            <p className="font-bold text-blue-500 text-sm"><span className='text-black font-bold'>Director : </span>{movieData.Director}</p>
+                            <p className="font-bold text-sm"><span className='text-black font-bold'>Director : </span>{movieData.Director}</p>
 
-                            <p className="text-blue-500 text-sm font-bold"><span className='text-black font-bold'>Writer : </span>{movieData.Writer}</p>
+                            <p className="text-sm font-bold"><span className='text-black font-bold'>Writer : </span>{movieData.Writer}</p>
 
-                            <p className="text-blue-500 text-sm font-bold"><span className='text-black font-bold'>Released Year : </span>{movieData.Released}</p>
+                            <p className="text-sm font-bold"><span className='text-black font-bold'>Released Year : </span>{movieData.Released}</p>
 
-                            <p className="text-blue-500 text-sm font-bold"><span className='text-black font-bold'>Duration : </span>{movieData.Runtime}</p>
+                            <p className="text-sm font-bold"><span className='text-black font-bold'>Duration : </span>{movieData.Runtime}</p>
 
-                            <p className="text-blue-500 text-sm font-bold"><span className='text-black font-bold'>Box Office : </span>{movieData.BoxOffice}</p>
+                            <p className="text-sm font-bold"><span className='text-black font-bold'>Box Office : </span>{movieData.BoxOffice}</p>
 
-                            <p className="text-blue-500 text-sm font-bold"><span className='text-black font-bold'>IMDB Rating : </span>{movieData.imdbRating}</p>
+                            <p className="text-sm font-bold"><span className='text-black font-bold'>IMDB Rating : </span>{movieData.imdbRating}</p>
 
-                            <p className="text-blue-500 text-sm font-bold"><span className='text-black font-semibold'>Type : </span> {(movieData.Type)}</p>
+                            <p className="text-sm font-bold"><span className='text-black font-semibold'>Type : </span> {(movieData.Type)}</p>
 
                             <div className='text-center'>
                                 <button
