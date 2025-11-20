@@ -14,7 +14,7 @@ const Home = () => {
             <div>
                 <Card />
             </div>
-            <div>
+            <div className='py-5 flex justify-center items-center'>
                 <Paginate />
             </div>
         </div>

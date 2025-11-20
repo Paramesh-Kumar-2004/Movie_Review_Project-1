@@ -62,7 +62,7 @@ const MovieData = () => {
 
                             <p className="text-sm font-bold"><span className='text-black font-bold'>Writer : </span>{movieData.Writer}</p>
 
-                            <p className="text-sm font-bold"><span className='text-black font-bold'>Released Year : </span>{movieData.Released}</p>
+                            <p className="text-sm font-bold"><span className='text-black font-bold'>Release Year : </span>{movieData.Released}</p>
 
                             <p className="text-sm font-bold"><span className='text-black font-bold'>Duration : </span>{movieData.Runtime}</p>
 
