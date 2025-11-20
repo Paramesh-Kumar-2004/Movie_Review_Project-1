@@ -12,9 +12,9 @@ const ContextAPI = ({ children }) => {
     const [refetch, setRefetch] = useState(false)
 
     const [page, setPage] = useState(1)
-    const [title, setTitle] = useState("")
+    const [title, setTitle] = useState("Avengers")
     const [type, setType] = useState("movie")
-    const [year, setYear] = useState()
+    const [year, setYear] = useState("All")
 
     useEffect(() => {
         fetchMovie()
@@ -22,7 +22,7 @@ const ContextAPI = ({ children }) => {
 
     async function fetchMovie() {
 
-        let url = `http://www.omdbapi.com/?apikey=747591dd&s=${title ? title : "Avengers"}&page=${page}&type=${type}`
+        let url = `http://www.omdbapi.com/?apikey=747591dd&s=${title}&page=${page}&type=${type}`
 
         if (year >= 1990) {
             console.log("Year")
