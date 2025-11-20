@@ -48,7 +48,7 @@ const Card = () => {
                 ) : (
                     <div>
                         <p className="text-center text-white mt-10 text-xl">
-                            No Data Found
+                            No Movies Found
                         </p>
                     </div>
                 )}
