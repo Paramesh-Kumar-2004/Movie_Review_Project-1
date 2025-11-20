@@ -25,7 +25,7 @@ const ContextAPI = ({ children }) => {
         let url = `https://www.omdbapi.com/?apikey=747591dd&s=${title}&page=${page}&type=${type}`
 
         if (year >= 1990) {
-            url = `http://www.omdbapi.com/?apikey=747591dd&s=${title ? title : "Avengers"}&page=${page}&type=${type}&y=${year}`
+            url = `https://www.omdbapi.com/?apikey=747591dd&s=${title ? title : "Avengers"}&page=${page}&type=${type}&y=${year}`
         }
 
         try {
