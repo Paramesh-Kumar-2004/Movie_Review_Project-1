@@ -13,7 +13,7 @@ const Card = () => {
     const { movies, loading, loadingMessage } = useContext(Store);
 
 
-    function HandleMoreDetail(movie) {
+    function HandleMoreDetail(movie,) {
         navigate(`/movie/${movie.imdbID}`)
     }
 
@@ -47,7 +47,7 @@ const Card = () => {
                     ))
                 ) : (
                     <div>
-                        <p className="text-center text-gray-500 mt-10 text-xl">
+                        <p className="text-center text-white mt-10 text-xl">
                             No Data Found
                         </p>
                     </div>

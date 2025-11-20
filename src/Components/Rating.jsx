@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const Rating = () => {
+
+
+const Rating = ({ setFinalRating }) => {
 
     const [rating, setRating] = useState(Math.round(Math.random(5) * 5))
 
@@ -10,6 +12,7 @@ const Rating = () => {
 
     return (
         <div>
+
             <div className='flex justify-between mt-1 mb-2 '>
                 <option value="1"
                     onClick={(e) => HandleRatingUpdate(e)}
