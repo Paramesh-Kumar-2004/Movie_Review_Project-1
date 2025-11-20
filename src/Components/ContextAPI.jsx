@@ -22,15 +22,13 @@ const ContextAPI = ({ children }) => {
 
     async function fetchMovie() {
 
-        let url = `http://www.omdbapi.com/?apikey=747591dd&s=${title}&page=${page}&type=${type}`
+        let url = `https://www.omdbapi.com/?apikey=747591dd&s=${title}&page=${page}&type=${type}`
 
         if (year >= 1990) {
-            console.log("Year")
             url = `http://www.omdbapi.com/?apikey=747591dd&s=${title ? title : "Avengers"}&page=${page}&type=${type}&y=${year}`
         }
 
         try {
-            console.log(url)
             setLoading(true)
             const response = await axios.get(url);
             setMovies(response.data.Search || [])
