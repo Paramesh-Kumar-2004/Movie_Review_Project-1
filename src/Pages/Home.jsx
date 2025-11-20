@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from "../Components/Card.jsx"
 import SearchBar from '../Components/SearchBar.jsx'
+import { Paginate } from '../Components/Paginate.jsx'
 
 
 const Home = () => {
@@ -12,6 +13,9 @@ const Home = () => {
             </div>
             <div>
                 <Card />
+            </div>
+            <div>
+                <Paginate />
             </div>
         </div>
     )
