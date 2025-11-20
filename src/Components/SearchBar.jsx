@@ -17,7 +17,6 @@ const SearchBar = () => {
     }
 
     function HandleYear(e) {
-        console.log("HandleYear")
         setYear(e.target.value)
     }
 
