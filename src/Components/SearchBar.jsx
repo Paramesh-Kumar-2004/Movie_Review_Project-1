@@ -44,7 +44,7 @@ const SearchBar = () => {
 
                 <div>
                     <span className='font-bold'>Filter : </span>
-                    <select value={type} onChange={(e) => HandleFilter(e)} className="border-2 border-sky-600 px-2 py-1 rounded text-white font-bold bg-sky-700">
+                    <select value={type} onChange={(e) => HandleFilter(e)} className="border-2 border-sky-600 px-2 py-1 rounded text-white font-bold bg-sky-700 cursor-pointer">
                         <option value="movie">Movies</option>
                         <option value="series">Series</option>
                     </select>
@@ -53,7 +53,7 @@ const SearchBar = () => {
                 <div>
                     <span className='font-bold'>Year : </span>
                     <select
-                        className="border-2 border-sky-600 px-2 py-1 rounded overflow-hidden no-scrollbar text-white font-bold bg-sky-700"
+                        className="border-2 border-sky-600 px-2 py-1 rounded overflow-hidden no-scrollbar text-white font-bold bg-sky-700 cursor-pointer"
                         onChange={(e) => HandleYear(e)}
                         value={year}
                     >

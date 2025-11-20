@@ -3,7 +3,10 @@ import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { Store } from './ContextAPI';
 
+
+
 export const Paginate = () => {
+
     const { page, setPage } = useContext(Store)
 
     return (
@@ -20,11 +23,11 @@ export const Paginate = () => {
                             fontSize: 18
                         },
                         '& .Mui-selected': {
-                            backgroundColor: '#1d4ed8 !important',
+                            backgroundColor: 'blue !important',
                             color: 'white !important',
                         },
                         '& .MuiPaginationItem-root:hover': {
-                            backgroundColor: '#3b82f6',
+                            backgroundColor: '#4A70A9',
                             color: 'white',
                         }
                     }}
