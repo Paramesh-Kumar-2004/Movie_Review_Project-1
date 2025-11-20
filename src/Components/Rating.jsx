@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 
 const Rating = ({ setFinalRating }) => {
 
-    const [rating, setRating] = useState(Math.round(Math.random(5) * 5))
+    const [rating, setRating] = useState(Math.floor(Math.random() * 5) + 1)
 
     const HandleRatingUpdate = (e) => {
         setRating(e.target.value)
