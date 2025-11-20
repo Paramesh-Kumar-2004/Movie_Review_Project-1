@@ -9,6 +9,7 @@ const ContextAPI = ({ children }) => {
     const [loading, setLoading] = useState(true)
     const [loadingMessage, setLoadingMessage] = useState("Loading...")
     const [movies, setMovies] = useState([])
+    const [refetch, setRefetch] = useState(false)
 
     const [page, setPage] = useState(1)
     const [title, setTitle] = useState("")
@@ -17,16 +18,21 @@ const ContextAPI = ({ children }) => {
 
     useEffect(() => {
         fetchMovie()
-    }, [page, title, type])
+    }, [page, title, type, year])
 
     async function fetchMovie() {
-        const options = {
-            method: 'GET',
-            url: `http://www.omdbapi.com/?apikey=747591dd&s=${title ? title : "Avengers"}&page=${page}&type=${type}&y=${year}`,
-        };
+
+        let url = `http://www.omdbapi.com/?apikey=747591dd&s=${title ? title : "Avengers"}&page=${page}&type=${type}`
+
+        if (year >= 1990) {
+            console.log("Year")
+            url = `http://www.omdbapi.com/?apikey=747591dd&s=${title ? title : "Avengers"}&page=${page}&type=${type}&y=${year}`
+        }
+
         try {
+            console.log(url)
             setLoading(true)
-            const response = await axios.request(options);
+            const response = await axios.get(url);
             setMovies(response.data.Search || [])
             // console.log(response.data.Search)
         } catch (error) {
@@ -45,6 +51,7 @@ const ContextAPI = ({ children }) => {
             title, setTitle,
             type, setType,
             year, setYear,
+            refetch, setRefetch
         }}>
             {children}
         </Store.Provider>
